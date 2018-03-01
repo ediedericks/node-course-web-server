@@ -22,9 +22,9 @@ app.use(function(req, res, next){
   next();
 });
 
-app.use(function(req, res, next){
-    res.render('maintenance.hbs');
-});
+// app.use(function(req, res, next){
+//     res.render('maintenance.hbs');
+// });
 
 hbs.registerHelper('getCurrentYear', function(){
   return new Date().getFullYear();
@@ -53,6 +53,12 @@ app.get('/', function(req, res){
 app.get('/about', function(req, res){
   res.render('about.hbs', {
     pageTitle: 'About page',
+  });
+});
+
+app.get('/projects', function(req, res){
+  res.render('projects.hbs', {
+    pageTitle: 'Projects'
   });
 });
 
